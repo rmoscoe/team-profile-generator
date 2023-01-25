@@ -2,13 +2,13 @@ const index = require("../index");
 
 describe("Manager", () => {
     describe("constructor", () => {
-        it("should return a new instance of a Manager with correct values for all properties" ()=> {
+        it("should return a new instance of a Manager with correct values for all properties", ()=> {
             const eName = "Ryan";
             const id = 473;
             const email = "r@nowhere.com";
             const office = 404;
 
-            const newManager = new Employee(eName, id, email, office);
+            const newManager = new Manager(eName, id, email, office);
 
             expect(newManager.name).toEqual(eName);
             expect(newManager.id).toEqual(id);
@@ -23,11 +23,11 @@ describe("Manager", () => {
             const role = "Manager";
             const office = 404;
 
-            const newEmployee = new Employee(eName, id, email, office);
-            const itsName = newEmployee.getName();
-            const itsId = newEmployee.getId();
-            const itsEmail = newEmployee.getEmail();
-            const itsRole = newEmployee.getRole();
+            const newManager = new Manager(eName, id, email, office);
+            const itsName = NewManager.getName();
+            const itsId = NewManager.getId();
+            const itsEmail = NewManager.getEmail();
+            const itsRole = NewManager.getRole();
 
             expect(itsName).toEqual(eName);
             expect(itsId).toEqual(id);

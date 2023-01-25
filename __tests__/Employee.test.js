@@ -2,7 +2,7 @@ import {Employee} from "../index";
 
 describe("Employee", () => {
     describe("constructor", () => {
-        it("should return a new instance of an Employee with correct values for all properties" ()=> {
+        it("should return a new instance of an Employee with correct values for all properties", ()=> {
             const eName = "Ryan";
             const id = 473;
             const email = "r@nowhere.com";
