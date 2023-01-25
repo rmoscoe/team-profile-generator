@@ -24,10 +24,10 @@ describe("Manager", () => {
             const office = 404;
 
             const newManager = new Manager(eName, id, email, office);
-            const itsName = NewManager.getName();
-            const itsId = NewManager.getId();
-            const itsEmail = NewManager.getEmail();
-            const itsRole = NewManager.getRole();
+            const itsName = newManager.getName();
+            const itsId = newManager.getId();
+            const itsEmail = newManager.getEmail();
+            const itsRole = newManager.getRole();
 
             expect(itsName).toEqual(eName);
             expect(itsId).toEqual(id);

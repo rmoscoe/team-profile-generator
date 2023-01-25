@@ -10,10 +10,10 @@ describe("Engineer", () => {
 
             const newEngineer = new Engineer(eName, id, email, github);
 
-            expect(NewEngineer.name).toEqual(eName);
-            expect(NewEngineer.id).toEqual(id);
-            expect(NewEngineer.email).toEqual(email);
-            expect(NewEngineer.github).toEqual(github);
+            expect(newEngineer.name).toEqual(eName);
+            expect(newEngineer.id).toEqual(id);
+            expect(newEngineer.email).toEqual(email);
+            expect(newEngineer.github).toEqual(github);
         });
 
         it("should return the correct values for all getter methods", () => {
@@ -23,12 +23,12 @@ describe("Engineer", () => {
             const role = "Engineer";
             const github = "octoryan";
 
-            const NewEngineer = new Engineer(eName, id, email, github);
-            const itsName = NewEngineer.getName();
-            const itsId = NewEngineer.getId();
-            const itsEmail = NewEngineer.getEmail();
-            const itsRole = NewEngineer.getRole();
-            const itsGithub = NewEngineer.getGithub();
+            const newEngineer = new Engineer(eName, id, email, github);
+            const itsName = newEngineer.getName();
+            const itsId = newEngineer.getId();
+            const itsEmail = newEngineer.getEmail();
+            const itsRole = newEngineer.getRole();
+            const itsGithub = newEngineer.getGithub();
 
             expect(itsName).toEqual(eName);
             expect(itsId).toEqual(id);
