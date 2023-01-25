@@ -12,10 +12,6 @@ describe("Employee", () => {
             expect(newEmployee.name).toEqual(eName);
             expect(newEmployee.id).toEqual(id);
             expect(newEmployee.email).toEqual(email);
-            expect(itsName).toEqual(eName);
-            expect(itsID).toEqual(id);
-            expect(itsEmail).toEqual(email);
-            expect(itsRole).toEqual(role);
         });
 
         it("should return the correct values for all getter methods", () => {
