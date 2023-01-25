@@ -18,5 +18,8 @@
   "homepage": "https://github.com/rmoscoe/team-profile-generator#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^26.5.2"
   }
 }
