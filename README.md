@@ -27,6 +27,7 @@ In addition, this project incorporates unit testing using Jest. Each class in th
 ## Installation and Usage 
 
 ### Installation
+
 1. Open the Code menu and select Download ZIP. 
 2. Move the ZIP file to the desired location on your hard drive and unzip it. 
 3. Using a command line interface, navigate into the team-profile-generator-main directory.
@@ -35,6 +36,8 @@ In addition, this project incorporates unit testing using Jest. Each class in th
 <br/>
 
 ### Usage
+
+[Watch the Walk-through Video](https://watch.screencastify.com/v/ZpsMvBIsEpqGR4S3sYnY)
 1. Launch the application from your terminal with the command ```node index.js```.
 2. Follow the prompts to provide details for each team member you wish to add (see below).
 
