@@ -1,4 +1,4 @@
-import {Employee} from "../index";
+const Employee = require("../lib/employee");
 
 describe("Employee", () => {
     describe("constructor", () => {

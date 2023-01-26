@@ -1,5 +1,10 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
+const Employee = require("./lib/employee");
+const Manager = require("./lib/manager");
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
+
 const employees = [];
 
 //Questions arrays for the inquirer prompts
@@ -116,8 +121,6 @@ const questionsEmployee = [{
     choices: ["Yes", "No"]
 }];
 
-//Classes for Employee, Manager, Engineer, and Intern
-
 //Function to write the html file
 
 //Function to create the html string
@@ -145,8 +148,27 @@ function promptManager() {
         });
 }
 
+function promptEmployee() {
+    inquirer.prompt(questionsEmployee)
+        .then((answers) => {
+            buildEmployee(answers);
+            if (answers.continue) {
+                promptEmployee();
+            } else {
+                buildHTMLString();
+            }
+        })
+        .catch((err) => {
+            if (err.isTtyError) {
+                console.log("The prompts couldn't be rendered in the current environment.");
+            } else {
+                console.log(err);
+            }
+        });
+}
+
 //Call function to prompt the user for input
 promptManager();
 
 //Exports
-module.exports = {Employee, Manager, Engineer, Intern};
+module.exports = { Employee, Manager, Engineer, Intern };

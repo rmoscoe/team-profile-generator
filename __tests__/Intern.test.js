@@ -1,4 +1,4 @@
-const index = require("../index");
+const Intern = require("../lib/intern");
 
 describe("Intern", () => {
     describe("constructor", () => {

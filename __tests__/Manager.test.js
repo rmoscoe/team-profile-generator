@@ -1,4 +1,4 @@
-const index = require("../index");
+const Manager = require("../lib/manager");
 
 describe("Manager", () => {
     describe("constructor", () => {
