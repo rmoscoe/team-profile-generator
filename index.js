@@ -1,6 +1,5 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const Employee = require("./lib/employee");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
@@ -122,11 +121,16 @@ const questionsEmployee = [{
 }];
 
 //Function to write the html file
+function writeHTMLFile (htmlString) {
+    fs.writeFile("./dist/myTeam.html", htmlString, (err) => {
+        err ? console.log(err) : console.log("File created successfully.");
+    });
+}
 
 //Function to create the html string
 function buildHTMLString() {
     // Base of string
-    let htmlString = `!DOCTYPE html>
+    let htmlString = `<!DOCTYPE html>
 
 <html>
 
@@ -157,7 +161,7 @@ function buildHTMLString() {
                 htmlString += `<div class="card mb-3" style="width: 18rem;">
                 <div class="card-header bg-primary">
                     <h3 class="card-title text-white">${employee.name}</h3>
-                    <h4 class="text-white"><span class="fa-solid ${icon}"></span>${employee.getRole()}</h4>
+                    <h4 class="text-white"><span class="fa-solid ${icon} mr-3"></span>${employee.getRole()}</h4>
                 </div>
                 <div class="card-body bg-light">
                     <ul class="list-group list-group-flush">
@@ -173,7 +177,7 @@ function buildHTMLString() {
                 htmlString += `<div class="card mb-3" style="width: 18rem;">
                 <div class="card-header bg-primary">
                     <h3 class="card-title text-white">${employee.name}</h3>
-                    <h4 class="text-white"><span class="fa-solid ${icon}"></span>${employee.getRole()}</h4>
+                    <h4 class="text-white"><span class="fa-solid ${icon} mr-3"></span>${employee.getRole()}</h4>
                 </div>
                 <div class="card-body bg-light">
                     <ul class="list-group list-group-flush">
@@ -189,7 +193,7 @@ function buildHTMLString() {
                 htmlString += `<div class="card mb-3" style="width: 18rem;">
                 <div class="card-header bg-primary">
                     <h3 class="card-title text-white">${employee.name}</h3>
-                    <h4 class="text-white"><span class="fa-solid ${icon}"></span>${employee.getRole()}</h4>
+                    <h4 class="text-white"><span class="fa-solid ${icon} mr-3"></span>${employee.getRole()}</h4>
                 </div>
                 <div class="card-body bg-light">
                     <ul class="list-group list-group-flush">
