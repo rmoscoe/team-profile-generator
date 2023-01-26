@@ -40,7 +40,7 @@ const questionsManager = [{
         }
     }
 }, {
-    name: "officeNumber",
+    name: "office",
     message: "Please enter the manager's office number.",
     validate: (input) => {
         if (/^[\d]+$/.test(input.trim())) {
@@ -126,14 +126,33 @@ const questionsEmployee = [{
 //Function to create the html string
 
 //Function to build employee objects and push to the employees array
-
+function buildEmployee (answers) {
+    let name, id, email, office, github, school;
+    ({name, id, email, office, github, school, role = "Manager"} = answers);
+    
+    name = name.trim()[0].toUpperCase() + name.trim().substring(1);
+    
+    switch (role) {
+        case "Manager":
+            employees.push(new Manager(name, id.trim(), email.trim(), office.trim()));
+            break;
+        case "Engineer":
+            employees.push(new Engineer(name, id.trim(), email.trim(), github.trim()));
+            break;
+        case "Intern":
+            employees.push(new Intern(name, id.trim(), email.trim(), school.trim()));
+            break;
+        default:
+            console.err("Error: This employee's role is undefined.");
+    }
+}
 
 //Functions to prompt the user for input
 function promptManager() {
     inquirer.prompt(questionsManager)
         .then((answers) => {
             buildEmployee(answers);
-            if (answers.continue) {
+            if (answers.continue === "Yes") {
                 promptEmployee();
             } else {
                 buildHTMLString();
@@ -152,7 +171,7 @@ function promptEmployee() {
     inquirer.prompt(questionsEmployee)
         .then((answers) => {
             buildEmployee(answers);
-            if (answers.continue) {
+            if (answers.continue === "Yes") {
                 promptEmployee();
             } else {
                 buildHTMLString();
